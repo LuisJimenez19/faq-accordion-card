@@ -1,0 +1,270 @@
+
+:root{
+    /* Primary */
+    /* Text */
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+
+    /*Background gradient: */
+
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+
+    /* Neutral */
+    /* Text */
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+    /* Dividers */
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ /* ----------------------------mobile 375px---------------------------- */
+
+
+body{
+    
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+    color: var(--Dark-grayish-blue);
+    margin: auto;
+    padding-top: 120px; 
+    width: 375px;
+    min-height: 100vh;          /*no importa si el contenido se expande el backgound se ve bien */
+    /* box-sizing: border-box; */
+    background: linear-gradient(180deg, var(--Soft-violet)0%, var(--Soft-blue)100% );
+    text-align: center;
+}
+/* estilos de la targeta en general */
+.main{
+
+    width: 90%;
+    min-height:530px;
+    background-color: white;
+    margin: auto;
+    text-align: left;
+    padding: 30px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px var(--Very-dark-grayish-blue);
+    
+
+}
+/* Fin de estilos de la trageta */
+
+
+
+/* Estilos de la imagen y s1 */
+.main__s1__image{
+
+    display: block;
+    width: 240px;
+    /* height: 170px; */
+    /* transform: translateY(-125px); */  /* deja su espacio en el dom, entonces queda muy grande la seccion que lo contiene */
+
+    margin: -125px auto 0;
+    
+}
+
+.main__s1__shadow{
+    display: block;
+    width: 240px;
+    /* transform: translateY(-200px); */
+
+    margin: -70px auto 0;
+
+}
+/* Fin de estilos de la imagen y la s1 */
+
+
+/* Estilos de la s2 */
+
+.main__s2__title{
+
+    font-weight: 700;
+    font-size: 3em;
+    color: var(--Very-dark-desaturated-blue);
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+/* Esilos del menu acordeon */
+.main__s2__details{
+
+    margin: 20px auto ;
+    
+    font-weight: 400;
+    font-size: 1.15em;
+    transition: all 0.3s linear;
+    /* cursor: pointer; */
+    position: relative;  /* La posición absoula del icono sea reliativa a la del details */
+    
+    
+}
+
+.main__s2__details__summary{
+
+    list-style: none;
+    margin: 3px auto;
+}
+
+.main__s2__details__summary-icon{
+
+    content: url(../images/icon-arrow-down.svg);
+    position:absolute; /* ubicar el icono */
+    
+    right: 0;
+    /* top: 50%;   /*  se centra pero también cuando se abre y muestra el p */
+    /*bottom: 50%; */
+    top: 6px;
+    transition: 0.3s;
+}
+
+/* Esto es una posiblidad pero no jaja 
+  /* .main__s2__details::after{
+    content: url(../images/icon-arrow-down.svg);
+    position: relative;
+    left: 100%;
+    top: -20px;
+} */   
+    
+
+/* Estilos cuando es seleccionado */
+.main__s2__details[open]{
+    
+    /* font-weight: 700;  Estos estilos mejor se los doy con el hover ah, ¿pero y en mobile? entonces mejor lo dejo */
+    color: var(--Soft-red);
+
+    /* font-size: 1.2em; */
+    /* transform: rotate(180deg); */
+    
+}
+
+.main__s2__details[open]  .main__s2__details__summary-icon{   /* gira el icono */
+
+    transform: rotate(180deg);
+    transition: 0.3s;
+}
+
+
+
+.main__s2__details p {
+
+    color: var(--Dark-grayish-blue);
+    font-weight: 400;
+    
+}
+
+.main__s2__hr{
+     
+    border-top: none;
+
+}
+
+
+/* fin de estilos de cuando es seleccionado */
+
+
+
+/* footer */
+.attribution{
+
+    color: var(--Very-dark-desaturated-blue);
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+.attribution a {
+
+    text-decoration: none;
+    color: var(--Light-grayish-blue);
+    transition: .5s;
+}
+
+
+/* ----------------------------------Desktop-------------------------- */
+
+
+@media screen and (min-width:800px) {
+    body{
+        width: 930px;
+        height: 510px;
+        margin: auto;
+        
+    }
+    
+    .main{
+        display: flex;
+        padding-left: 0;
+        
+        /* overflow: hidden; oculto lo que se sale del main */
+        
+    }
+
+    .main__s1{
+
+        width: 50%;
+        background-image: url(../images/bg-pattern-desktop.svg);
+        background-size: cover;
+        background-position: 250%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        /* position: relative; */
+    }
+
+    .main__s1__image{
+
+        content: url(../images/illustration-woman-online-desktop.svg);
+        width: 95%;
+        margin: 50px 0 0 -50px;
+        
+    } 
+    
+    /* caja naranja */
+    .main__s1__shadow{
+
+        position:absolute;   /* para que se superponga el cubito  */
+        content: url(../images/illustration-box-desktop.svg);
+        margin: -220px 0 0 -100px;
+        width: 200px;
+        /* width: 100px; */
+        
+        z-index: 100;
+
+    }
+
+
+    .main__s2{
+
+        width: 50%;
+        padding: 30px 20px 0 0;
+
+    }
+
+    .main__s2__title{
+
+        text-align: left;
+
+    }
+
+    .main__s2__details:hover{
+
+        color: var(--Soft-red);
+        cursor: pointer;
+        /* font-weight: 700; */
+        /* font-size: 1.25em; */
+
+    }
+
+    .attribution a:hover{
+        color: var(--Soft-red);
+
+
+    }
+
+}
