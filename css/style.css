@@ -106,33 +106,24 @@ body{
     
     
 }
-
+/* Estilos de la pregunta */
 .main__s2__details__summary{
 
     list-style: none;
     margin: 3px auto;
 }
 
+/* Estilos del icono  */
 .main__s2__details__summary-icon{
 
     content: url(../images/icon-arrow-down.svg);
     position:absolute; /* ubicar el icono */
-    
     right: 0;
     /* top: 50%;   /*  se centra pero también cuando se abre y muestra el p */
     /*bottom: 50%; */
     top: 6px;
     transition: 0.3s;
 }
-
-/* Esto es una posiblidad pero no jaja 
-  /* .main__s2__details::after{
-    content: url(../images/icon-arrow-down.svg);
-    position: relative;
-    left: 100%;
-    top: -20px;
-} */   
-    
 
 /* Estilos cuando es seleccionado */
 .main__s2__details[open]{
@@ -145,6 +136,7 @@ body{
     
 }
 
+
 .main__s2__details[open]  .main__s2__details__summary-icon{   /* gira el icono */
 
     transform: rotate(180deg);
@@ -152,7 +144,7 @@ body{
 }
 
 
-
+/* Estilos del parrafo, se especifican ya que cuando se muestran salen con lo estilos del open */
 .main__s2__details p {
 
     color: var(--Dark-grayish-blue);
@@ -199,10 +191,9 @@ body{
     }
     
     .main{
+        
         display: flex;
         padding-left: 0;
-        
-        /* overflow: hidden; oculto lo que se sale del main */
         
     }
 
@@ -211,10 +202,13 @@ body{
         width: 50%;
         background-image: url(../images/bg-pattern-desktop.svg);
         background-size: cover;
-        background-position: 250%;
+        /* background-position: 250%; */
+      
+        background-position: -133px -63px;
         background-repeat: no-repeat;
         overflow: hidden;
-        /* position: relative; */
+ 
+        
     }
 
     .main__s1__image{
@@ -222,7 +216,7 @@ body{
         content: url(../images/illustration-woman-online-desktop.svg);
         width: 95%;
         margin: 50px 0 0 -50px;
-        
+      
     } 
     
     /* caja naranja */
@@ -233,14 +227,32 @@ body{
         margin: -220px 0 0 -100px;
         width: 200px;
         /* width: 100px; */
-        
-        z-index: 100;
+        animation-name: move;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
 
+    }
+
+    @keyframes move {
+
+        0%{
+            transform: translateY(0);
+        }
+        100%{
+
+            
+            transform: translateY(-7px);
+
+        }
+        
     }
 
 
     .main__s2{
 
+        box-sizing: border-box;
         width: 50%;
         padding: 30px 20px 0 0;
 
